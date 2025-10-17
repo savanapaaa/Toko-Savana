@@ -1,0 +1,417 @@
+/* Advanced CSS Animations untuk JavaScript Effects */
+
+/* Particles Container */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: linear-gradient(45deg, #7A7A99, #9C9CB5);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float-up linear infinite;
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) scale(0);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1);
+    }
+}
+
+/* Slide In Animations */
+@keyframes slide-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out-right {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+/* Bounce In Animation */
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(50px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slide-in-up {
+    animation: slide-in-up 0.6s ease-out;
+}
+
+/* Spin Animation for Loading */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notification Toast */
+.notification-toast {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: none;
+    backdrop-filter: blur(10px);
+}
+
+.notification-toast.alert-success {
+    background: linear-gradient(135deg, rgba(255, 155, 106, 0.9), rgba(255, 176, 133, 0.9));
+    color: #4A2E05;
+}
+
+.notification-toast.alert-error,
+.notification-toast.alert-danger {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.9), rgba(178, 34, 52, 0.9));
+    color: white;
+}
+
+.notification-toast.alert-info {
+    background: linear-gradient(135deg, rgba(255, 176, 133, 0.9), rgba(255, 214, 165, 0.9));
+    color: #4A2E05;
+}
+
+.notification-toast.alert-warning {
+    background: linear-gradient(135deg, rgba(255, 214, 165, 0.9), rgba(255, 232, 204, 0.9));
+    color: #4A2E05;
+}
+
+/* Advanced Hover Effects */
+.advanced-hover {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.advanced-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.advanced-hover:hover::before {
+    left: 100%;
+}
+
+.advanced-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* 3D Flip Card Effect */
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 200px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.flip-card-front {
+    background: linear-gradient(135deg, #FF7B54, #FFB085);
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, #FF9B6A, #FFD6A5);
+    transform: rotateY(180deg);
+}
+
+/* Morphing Background */
+.morphing-bg {
+    background: linear-gradient(-45deg, #FF7B54, #FFB085, #FF9B6A, #FFD6A5);
+    background-size: 400% 400%;
+    animation: morph-gradient 15s ease infinite;
+}
+
+@keyframes morph-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Neon Glow Effect */
+.neon-glow {
+    color: #3E3E50;
+    text-shadow: 
+        0 0 5px #9C9CB5,
+        0 0 10px #9C9CB5,
+        0 0 15px #9C9CB5;
+    animation: neon-flicker 3s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px #9C9CB5,
+            0 0 10px #9C9CB5,
+            0 0 15px #9C9CB5;
+    }
+    50% {
+        text-shadow: 
+            0 0 2px #9C9CB5,
+            0 0 5px #9C9CB5,
+            0 0 8px #9C9CB5;
+    }
+}
+
+/* Typing Cursor Effect */
+.typing-text {
+    border-right: 2px solid #7A7A99;
+    animation: blink-cursor 1s infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 50% { border-color: #7A7A99; }
+    51%, 100% { border-color: transparent; }
+}
+
+/* Floating Elements */
+.floating {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Pulse Effect */
+.pulse {
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(122, 122, 153, 0.4);
+    }
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 8px rgba(122, 122, 153, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(122, 122, 153, 0);
+    }
+}
+
+/* Shake Effect */
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+/* Zoom In Effect */
+.zoom-in {
+    transition: transform 0.3s ease;
+}
+
+.zoom-in:hover {
+    transform: scale(1.1);
+}
+
+/* Rainbow Text */
+.rainbow-text {
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 3s ease infinite;
+}
+
+@keyframes rainbow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Loading Spinner Variations */
+.spinner-grow-custom {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: text-bottom;
+    background-color: currentColor;
+    border-radius: 50%;
+    opacity: 0;
+    animation: spinner-grow-custom 0.75s linear infinite;
+}
+
+@keyframes spinner-grow-custom {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* Matrix Rain Effect Background */
+.matrix-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.matrix-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        radial-gradient(circle, rgba(102, 126, 234, 0.1) 2px, transparent 2px);
+    background-size: 50px 50px;
+    animation: matrix-move 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes matrix-move {
+    0% { transform: translateY(0) translateX(0); }
+    100% { transform: translateY(50px) translateX(50px); }
+}
+
+/* Responsive Animations */
+@media (max-width: 768px) {
+    .particle {
+        display: none; /* Disable particles on mobile for performance */
+    }
+    
+    .advanced-hover:hover {
+        transform: none; /* Disable hover effects on touch devices */
+    }
+    
+    .floating {
+        animation-duration: 4s; /* Reduce animation duration on mobile */
+    }
+}
+
+/* Dark Theme Styles */
+.dark-theme .card {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-theme .text-dark {
+    color: #ffffff !important;
+}
+
+.dark-theme .bg-light {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Print Styles */
+@media print {
+    .particles-container,
+    .notification-toast,
+    .btn {
+        display: none !important;
+    }
+    
+    .card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Toko Savana - Sistem Manajemen Penjualan",
+  "short_name": "Toko Savana",
+  "description": "Sistem manajemen penjualan modern untuk mengelola barang, pembeli, dan transaksi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F5FA",
+  "theme_color": "#7A7A99",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%237A7A99' d='M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v48c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-48h96c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm-6 304c0 3.3-2.7 6-6 6H76c-3.3 0-6-2.7-6-6V70c0-3.3 2.7-6 6-6h360c3.3 0 6 2.7 6 6v234z'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%237A7A99' d='M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v48c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-48h96c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm-6 304c0 3.3-2.7 6-6 6H76c-3.3 0-6-2.7-6-6V70c0-3.3 2.7-6 6-6h360c3.3 0 6 2.7 6 6v234z'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "id",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

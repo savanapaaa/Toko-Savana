@@ -1,0 +1,392 @@
+/* Advanced CSS Effects untuk Toko Savana - Soft Gray-Purple Minimalist Theme */
+
+/* Glassmorphism Effects */
+.glass-effect {
+    background: rgba(245, 245, 250, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    border: 1px solid rgba(156, 156, 181, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Neumorphism Buttons */
+.btn-neomorphism {
+    background: linear-gradient(145deg, #F5F5FA, #E6E6F0);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    color: #3E3E50;
+}
+
+.btn-neomorphism:hover {
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(145deg, #E6E6F0, #D9D9E8);
+}
+
+/* Liquid Loading Animation */
+.liquid-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.liquid-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: liquid-flow 2s infinite;
+}
+
+@keyframes liquid-flow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Particle Animation Background */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float-particles 10s infinite linear;
+}
+
+@keyframes float-particles {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 3D Card Effects */
+.card-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+}
+
+/* Magnetic Hover Effect */
+.magnetic-btn {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+
+.magnetic-btn:hover {
+    transform: translate3d(0, -8px, 0);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Morphing Shapes */
+.morphing-shape {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 50%;
+    animation: morph 4s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0%, 100% { border-radius: 50%; }
+    25% { border-radius: 10px; }
+    50% { border-radius: 50% 10px; }
+    75% { border-radius: 10px 50%; }
+}
+
+/* Text Typing Animation */
+.typing-text {
+    overflow: hidden;
+    border-right: 2px solid #667eea;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #667eea; }
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    color: #667eea;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 0.5s infinite;
+    color: #ff0040;
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.5s infinite;
+    color: #00ff40;
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0%, 14%, 15%, 49%, 50%, 99%, 100% { transform: translate(0); }
+    15%, 49% { transform: translate(-2px, -1px); }
+}
+
+@keyframes glitch-2 {
+    0%, 20%, 21%, 62%, 63%, 99%, 100% { transform: translate(0); }
+    21%, 62% { transform: translate(2px, 1px); }
+}
+
+/* Ripple Effect */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-animation 3s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Neon Glow Effect */
+.neon-glow {
+    color: #fff;
+    text-shadow: 
+        0 0 5px #667eea,
+        0 0 10px #667eea,
+        0 0 15px #667eea,
+        0 0 20px #667eea,
+        0 0 35px #667eea,
+        0 0 40px #667eea;
+    animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+            0 0 5px #667eea,
+            0 0 10px #667eea,
+            0 0 15px #667eea,
+            0 0 20px #667eea,
+            0 0 35px #667eea,
+            0 0 40px #667eea;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/* Holographic Effect */
+.holographic {
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+    background-size: 200% 200%;
+    animation: holographic-shine 3s infinite;
+}
+
+@keyframes holographic-shine {
+    0% { background-position: -200% -200%; }
+    100% { background-position: 200% 200%; }
+}
+
+/* Breathing Animation */
+.breathing {
+    animation: breathing 3s ease-in-out infinite;
+}
+
+@keyframes breathing {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Parallax Scroll Effect */
+.parallax-element {
+    transform: translateZ(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* Custom Checkbox/Radio Animations */
+.animated-checkbox {
+    position: relative;
+    cursor: pointer;
+}
+
+.animated-checkbox input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.animated-checkbox .checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.animated-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    animation: checkmark-appear 0.3s ease;
+}
+
+@keyframes checkmark-appear {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Loading Skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading-skeleton 1.5s infinite;
+}
+
+@keyframes loading-skeleton {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Bounce In Animation */
+.bounce-in {
+    animation: bounce-in 0.6s ease;
+}
+
+@keyframes bounce-in {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Slide In Animations */
+.slide-in-left {
+    animation: slide-in-left 0.5s ease;
+}
+
+.slide-in-right {
+    animation: slide-in-right 0.5s ease;
+}
+
+.slide-in-up {
+    animation: slide-in-up 0.5s ease;
+}
+
+.slide-in-down {
+    animation: slide-in-down 0.5s ease;
+}
+
+@keyframes slide-in-left {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-up {
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-down {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+    .particles-container {
+        display: none; /* Disable particles on mobile for performance */
+    }
+    
+    .card-3d:hover {
+        transform: none; /* Disable 3D effects on touch devices */
+    }
+    
+    .magnetic-btn:hover {
+        transform: translate3d(0, -4px, 0); /* Reduce hover effect on mobile */
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
